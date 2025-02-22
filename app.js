@@ -60,6 +60,10 @@ const generateBook = () => {
     return newBook;
 };
 
+/**
+ * @param {HTMLElement} bookElem 
+ * @param {IDBRequest<any[]>} books 
+ */
 const initEventListenerForBooks = (bookElem, books) => {
     document.addEventListener("book-comp-ready", () => {
         bookElem.dispatchEvent(new CustomEvent("send-book-data", {
@@ -79,4 +83,4 @@ const reloadBooks = async () => {
     bookSection.append(bookElem);
 
     initEventListenerForBooks(bookElem, books);
-}
+};

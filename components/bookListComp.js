@@ -11,6 +11,7 @@ export default class BookElems extends HTMLElement {
         this.dispatchEvent(new CustomEvent("book-comp-ready", {bubbles: true, composed: true}));
     };
 
+    /**@param {IDBRequest<any[]>} books*/
     generateBooks(books) {
         for (let book of books) {
             let container = document.createElement("div");
